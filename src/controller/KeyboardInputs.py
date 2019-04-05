@@ -9,39 +9,36 @@ class KeyboardInputs:
         self.myContainer1 = Frame(player)
         self.myContainer1.pack()
 
-
         def keyPressed(event):
-            #print(repr(event.char))
+            print(repr(event.char))
             if repr(event.keysym_num) == '119':
                 print('w')
-                player.jumpPressed(self)
+                player.jumpPressed()
             elif repr(event.keysym_num) == '100':
                 print('d')
-                player.rightPressed(self)
+                player.rightPressed()
             elif repr(event.keysym_num) == '97':
                 print('a')
-                player.leftPressed(self)
+                player.leftPressed()
             else:
                 print("Wrong Key")
-
 
         def keyReleased(event):
             if repr(event.keysym_num) == '119':
                 print('wR')
-                player.jumpReleased(self)
+                player.jumpReleased()
             elif repr(event.keysym_num) == '100':
                 print('dR')
-                player.rightPressed(self)
+                player.rightPressed()
             elif repr(event.keysym_num) == '97':
                 print('aR')
-                player.leftPressed(self)
+                player.leftPressed()
             else:
                 print("Wrong Key")
 
-
         def callback(event):
             frame.focus_set()
-            #print("clicked at", event.x, event.y)
+            print("clicked at", event.x, event.y)
 
         frame = Frame(root, width=100, height=100)
         frame.bind("<KeyPress>", keyPressed)

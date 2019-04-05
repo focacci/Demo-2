@@ -1,10 +1,11 @@
 from model.PhysicalObject import PhysicalObject
-from model.Walking import Walking
+
 
 
 class Player(PhysicalObject):
 
     def __init__(self, location, velocity):
+        from model.Walking import Walking
         super().__init__(location, velocity)
 
         self.location = location
