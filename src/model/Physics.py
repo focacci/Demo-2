@@ -46,17 +46,19 @@ class Physics:
             ix = potentialLocation.x
             iy = ix * mBound + bBound
 
-            objUp = obj.location.z.max(potentialLocation.z)
-            objDown = obj.location.z.min(potentialLocation.z)
+            if obj.location.z > potentialLocation.z:
+                objUp = obj.location.z
+                objDown = potentialLocation.z
+            else:
+                objUp = potentialLocation.z
+                objDown = obj.location.z
 
-            bLeft = platform.start.x.min(platform.end.x)
-            bRight = platform.start.x.max(platform.end.x)
+            bLeft = platform.start.x
+            bRight = platform.end.x
 
             return (iy >= objDown and iy <= objUp) and (ix >= bLeft and ix <= bRight)
         else:
             ix = (bBound - bObj) / (mObj - mBound)
-            iy = ix * mObj + bObj
-            iy_redundant = ix * mBound + bBound
 
             objLeft = obj.location.x.min(potentialLocation.x)
             objRight = obj.location.x.max(potentialLocation.x)

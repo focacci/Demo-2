@@ -1,10 +1,6 @@
-from model.PlayerState import PlayerState
-
-
-class InAir(PlayerState):
+class InAir:
 
     def __init__(self, player):
-        super().__init__(player)
         self.player = player
 
     def leftPressed(self):

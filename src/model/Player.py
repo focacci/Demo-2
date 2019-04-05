@@ -1,7 +1,6 @@
 from model.PhysicalObject import PhysicalObject
 
 
-
 class Player(PhysicalObject):
 
     def __init__(self, location, velocity):

@@ -1,5 +1,4 @@
 from model.Player import Player
-from model.Rising import Rising
 
 
 class PlayerState(Player):
@@ -20,6 +19,7 @@ class PlayerState(Player):
             self.rightPressed()
 
     def jumpPressed(self):
+        from model.Rising import Rising
         if self.jumpCapable:
             self.player.velocity.z = self.player.standingJumpVelocity
             self.player.state = Rising(self.player)

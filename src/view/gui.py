@@ -56,26 +56,3 @@ class GUI:
         self.player2sprite.translatex.value = self.convert(self.game.player.location.x, self.playerSpriteSize)
         self.player2sprite.translatey.value = self.convert2(self.game.player.location.z, self.playerSpriteSize)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

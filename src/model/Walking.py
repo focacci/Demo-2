@@ -1,11 +1,5 @@
-from model.PlayerState import PlayerState
-from model.Rising import Rising
-
-
-class Walking(PlayerState):
-
+class Walking:
     def __init__(self, player):
-        super().__init__(player)
         self.player = player
 
     def leftPressed(self):
@@ -15,6 +9,7 @@ class Walking(PlayerState):
         self.player.walkRight()
 
     def jumpPressed(self):
+        from model.Rising import Rising
         self.player.velocity.z = self.player.walkingJumpVelocity
         self.player.state = Rising(self.player)
 
