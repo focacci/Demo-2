@@ -56,7 +56,7 @@ class Player(PhysicalObject):
         self.state.risingPlatformCollision()
 
     def fallingPlatformCollision(self):
-        self.state.fallilngPlatformCollision()
+        self.state.fallingPlatformCollision()
 
     def noPlatformCollision(self):
         self.state.noPlatformCollision()
