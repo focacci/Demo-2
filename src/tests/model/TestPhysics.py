@@ -65,8 +65,16 @@ class TestPhysics(TestCase):
 
     def test_updateWorld(self):
         physics = Physics()
-        location = PhysicsVector(5, 0, 5)
+        location = PhysicsVector(5, 0, 50)
         velocity = PhysicsVector(0, 0, 0)
         player = Player(location, velocity)
         world = World(5)
         dt = 3
+
+        world.objects.append(player)
+
+        physics.updateWorld(player, world, dt)
+
+        self.assertTrue(player.velocity.x == 0)
+        self.assertTrue(player.velocity.y == 0)
+        self.assertTrue(player.velocity.z == -15)

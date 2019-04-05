@@ -21,3 +21,6 @@ class Walking:
 
     def fallingPlatformCollision(self):
         self.player.velocity.z = 0
+
+    def noPlatformCollision(self):
+        self.player.velocity.z += 0
